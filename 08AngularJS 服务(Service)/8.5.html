@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    255的十六进制表示： {{hex}}
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.service("hexafy", function () {
+        this.myFunc = function (x) {
+            return x.toString(16);
+        }
+    })
+    app.controller("customersCtrl", function ($scope, hexafy) {
+        $scope.hex = hexafy.myFunc(255);
+
+
+    });
+</script>
+
+</body>
+</html>

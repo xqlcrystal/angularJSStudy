@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    当前时间是： {{theTime}}
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("customersCtrl", function ($scope, $interval) {
+        $scope.theTime = new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.theTime = new Date().toLocaleTimeString();
+        }, 1000)
+
+    });
+</script>
+
+</body>
+</html>
