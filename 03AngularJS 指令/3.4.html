@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>使用 ng-repeat 来循环数组</title>
+</head>
+<body>
+<div ng-app="" ng-init="names=[{name:'zhanshan',country:'cn'},{name:'tommas',country:'us'},{name:'李四',country:'中国'}]">
+    <p>使用 ng-repeat 来循环数组</p>
+    <li ng-repeat=" x in names">
+        {{x.name+','+x.country}}
+    </li>
+</div>
+
+</body>
+</html>
