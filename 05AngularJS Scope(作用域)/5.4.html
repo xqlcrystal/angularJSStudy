@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>根作用域</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <ul>
+        <li ng-repeat="x in carName">{{x}}</li>
+    </ul>
+    <h1>{{lastname}}</h1>
+
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope, $rootScope) {
+        $scope.carName = ["zhangsan", "lisi", "wangwu"];
+        $rootScope.lastname = "全局";
+    });
+
+</script>
+
+</body>
+</html>
