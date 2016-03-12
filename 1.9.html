@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title>使用 ng-bind 的相同实例</title>
+</head>
+<body>
+<div ng-app="" ng-init="person={firstname:'John',lastname:'Doe'}">
+    <p>姓名：<span ng-bind="person.firstname"></span></p>
+</div>
+
+</body>
+</html>
