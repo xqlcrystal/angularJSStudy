@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    {{myHeader}}
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("customersCtrl", function ($scope, $timeout) {
+        $scope.myHeader = "Hello world!";
+        $timeout(function () {
+            $scope.myHeader = "How are you today!";
+        }, 2000)
+
+    });
+</script>
+
+</body>
+</html>
