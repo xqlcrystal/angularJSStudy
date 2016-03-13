@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.Name + ', ' + x.Country }}
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function ($scope, $http) {
+        $http.get("Customers.JSON")
+                .success(function (response) {
+                    $scope.names = response.records;
+                })
+                .error(function (response) {
+                    $scope.names = [{
+                        "Name": "Alfreds Futterkiste",
+                        "City": "Berlin",
+                        "Country": "Germany"
+                    }]
+                })
+
+    });
+</script>
+
+</body>
+</html>
