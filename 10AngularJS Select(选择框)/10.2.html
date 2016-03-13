@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="selectedName">
+        <option ng-repeat="x in names">{{x}}</option>
+    </select>
+
+    <p>你的选择是：{{selectedName}}</p>
+
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope) {
+        $scope.names = ["zhangsan", "lisi", "wangwu"];
+
+    });
+</script>
+</body>
+</html>

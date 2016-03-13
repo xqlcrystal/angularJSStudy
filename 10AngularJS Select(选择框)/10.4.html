@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="selectedName" ng-options="x.site for x in names">
+
+    </select>
+
+    <h1>你的选择是：{{selectedName.site}}</h1>
+
+    <p>网址为：{{selectedName.url}}</p>
+
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope) {
+        $scope.names = [
+            {site: "google", url: "http://www.google.com"},
+            {site: "baidu", url: "http://www.baidu.com"},
+            {site: "sina", url: "http://www.sina.com.cn"}
+        ];
+
+    });
+</script>
+</body>
+</html>
